@@ -35,7 +35,7 @@ class BucketedSequence(utils.Sequence):
         #print(bucket_seqlen)
         #print(actual_bucketsizes)
         self.bins = [(np.ndarray([bs, bsl] + list(input_shape), dtype=x_seq.dtype),
-                      np.ndarray([bs] + list(output_shape), dtype=x_seq.dtype)) 
+                      np.ndarray([bs] + list(output_shape), dtype=y.dtype)) 
                      for bsl,bs in zip(bucket_seqlen, actual_bucketsizes)]
         assert len(self.bins) == num_actual
 
